@@ -34,7 +34,7 @@ The project utilizes a normalized 3NF schema consisting of 6 tables:
 
 1. **Clone the repository**:
    ```bash
-   git clone https://github.com/your-username/sales_analytics_core.git
+   git clone https://github.com/KostasDes06/sales_analytics_core.git
    cd sales_analytics_core
    ```
 
