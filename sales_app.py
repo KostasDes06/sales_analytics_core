@@ -5,28 +5,28 @@ import os
 import logging
 from datetime import date
 
-# --- CONFIGURATION & CONSTANTS ---
+# Configuration & Constants 
 DB_NAME = "sales.db"
 SQL_FILE = "salesdb(1).sql"
 APP_TITLE = "Team 12 | Enterprise Sales Analytics"
 WINDOW_SIZE = "1240x850"
 MIN_SIZE = (1100, 750)
 
-# --- THEME COLORS (Enterprise Palette) ---
+# Theme Colors
 CLR_BG = "#FFFFFF"           
-CLR_SIDEBAR = "#0f172a"     # Deeper Slate 900
-CLR_ACCENT = "#2563eb"       # Vibrant Blue 600
+CLR_SIDEBAR = "#0f172a"     
+CLR_ACCENT = "#2563eb"       
 CLR_HEADER = "#f1f5f9"       
 CLR_TEXT = "#1e293b"         
 CLR_TEXT_LIGHT = "#64748b"   
 CLR_CARD_BG = "#ffffff"      
 CLR_BORDER = "#e2e8f0"       
 
-# --- LOGGING SETUP ---
+# Logging setup
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
 logger = logging.getLogger(__name__)
 
-# --- DATABASE LAYER ---
+# Database layer
 class DatabaseManager:
     def __init__(self, db_name):
         self.db_name = db_name
@@ -82,8 +82,7 @@ class DatabaseManager:
         finally:
             conn.close()
 
-# --- CUSTOM UI WIDGETS ---
-
+# UI widgets
 class MetricCard(tk.Frame):
     def __init__(self, parent, title, value, icon_text="📊"):
         super().__init__(parent, bg=CLR_CARD_BG, highlightthickness=1, highlightbackground=CLR_BORDER)
@@ -114,8 +113,7 @@ class SidebarButton(tk.Button):
         self.bind("<Enter>", lambda e: self.config(bg="#1e293b", fg="white"))
         self.bind("<Leave>", lambda e: self.config(bg=CLR_SIDEBAR, fg="#94a3b8"))
 
-# --- VIEW COMPONENTS ---
-
+# View Components
 class HomeView(tk.Frame):
     def __init__(self, parent, db_manager):
         super().__init__(parent, bg=CLR_BG)
@@ -123,7 +121,7 @@ class HomeView(tk.Frame):
         self.setup_ui()
 
     def setup_ui(self):
-        # Header / Welcome
+        # Header 
         header_frame = tk.Frame(self, bg=CLR_BG)
         header_frame.pack(fill="x", padx=40, pady=(40,20))
         tk.Label(header_frame, text="Executive Command Center", font=("Segoe UI Bold", 26), bg=CLR_BG, fg=CLR_TEXT).pack(anchor="w")
@@ -339,7 +337,7 @@ class ReportsView(tk.Frame):
         self.setup_ui()
 
     def setup_ui(self):
-        # Header area for search
+        # Header area for searching
         search_bar = tk.Frame(self, bg=CLR_HEADER, padx=30, pady=25, bd=1, relief="flat", highlightthickness=1, highlightbackground=CLR_BORDER)
         search_bar.pack(fill="x")
         
@@ -406,8 +404,7 @@ class ReportsView(tk.Frame):
     def q6(self): self.run("SELECT s.Fullname, AVG(o.Price) as AVG_Sales FROM seller s JOIN order_table o ON s.Seller_ID = o.Seller_ID GROUP BY s.Seller_ID")
     def q7(self): self.run("SELECT s.Fullname as Seller, c.Fullname as Customer, o.Price FROM order_table o JOIN seller s ON o.Seller_ID = s.Seller_ID JOIN customer c ON o.Customer_ID = c.Customer_ID ORDER BY o.Price DESC LIMIT 1")
 
-# --- MAIN SHELL ---
-
+# Main shell
 class EnterpriseApp(tk.Tk):
     def __init__(self):
         super().__init__()
