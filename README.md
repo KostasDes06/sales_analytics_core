@@ -4,20 +4,6 @@ A robust, full-stack desktop application for managing sales, inventory, and affi
 
 ---
 
-## 📸 Screenshots
-
->#### Executive Home Page
----
-![image](Screenshot 2026-05-09 154831.jpg)
->#### Asset Administration Page
----
-![image](Screenshot 2026-05-09 154902.jpg)
->#### Intelligence Reports Page
----
-![image](Screenshot 2026-05-09 154922.jpg)
-
----
-
 ## - Key Features
 
 - **Executive Dashboard**: Real-time business intelligence featuring total revenue, order counts, and active customer metrics.
@@ -53,9 +39,6 @@ The project utilizes a normalized 3NF schema consisting of 6 tables:
 
 2. **Run the application**:
    ```bash
-   python sales_app.py
+   python3 sales_app.py
    ```
    *Note: On the first run, the system will automatically initialize the `sales.db` database using the provided `salesdb(1).sql` script.*
-
-## - Documentation
-For a detailed breakdown of the technical requirements, architectural diagrams, and error handling strategies, refer to the [Technical Report](./Αναφορά_Μέρους_Γ.pdf).
