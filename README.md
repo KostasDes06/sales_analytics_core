@@ -39,7 +39,7 @@ The project utilizes a normalized 3NF schema consisting of 6 tables:
    ```
 2. **Install the dependencies**:
   ```bash
-   pip install tkinter sqlite3
+  pip install tkinter sqlite3
   ```
 3. **Run the application**:
    ```bash
