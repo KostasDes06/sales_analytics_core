@@ -37,16 +37,19 @@ The project utilizes a normalized 3NF schema consisting of 6 tables:
    git clone https://github.com/KostasDes06/sales_analytics_core.git
    cd sales_analytics_core
    ```
-
-2. **Run the application**:
+2. **Install the dependencies**:
+  ```bash
+  pip install tkinter sqlite3
+  ```
+3. **Run the application**:
    ```bash
    python3 sales_app.py
    ```
    *Note: On the first run, the system will automatically initialize the `sales.db` database using the provided `salesdb(1).sql` script.*
 
 ## -> LLM usage for the project
-  - `Google's Gemini AI contributed by suggesting the color palette and the tab section's names on the left and generating the Python code for them.`
-  - `OpenAI's ChatGPT contributed by generating the SQL code for inserting values in the salesdb(1).sql file.`
+  - `Google's Gemini` contributed by suggesting the color palette and the tab section's names on the left and generating the Python code for them.
+  - `OpenAI's ChatGPT` contributed by generating the SQL code for inserting values in the salesdb(1).sql file.
    
 ---
 
