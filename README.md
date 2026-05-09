@@ -1,1 +1,61 @@
-# sales_analytics_core
+# Enterprise Sales & Analytics Core
+
+A robust, full-stack desktop application for managing sales, inventory, and affiliate teams. Built as a 2nd-year University project and later refined into a professional-grade tool, this project demonstrates a strong understanding of relational database design, Python application architecture, and modern UI/UX principles.
+
+---
+
+## 📸 Screenshots
+
+>#### Executive Home Page
+---
+![image](Screenshot 2026-05-09 154831.jpg)
+>#### Asset Administration Page
+---
+![image](Screenshot 2026-05-09 154902.jpg)
+>#### Intelligence Reports Page
+---
+![image](Screenshot 2026-05-09 154922.jpg)
+
+---
+
+## - Key Features
+
+- **Executive Dashboard**: Real-time business intelligence featuring total revenue, order counts, and active customer metrics.
+- **Relational Data Management**: Complete CRUD operations for Customers, Products, and Transactions with strict referential integrity.
+- **Advanced Analytics**: Built-in reporting engine for sales performance, geospatial customer analysis, and inventory tracking.
+- **Robust Architecture**: Clean separation of concerns between the database layer (`sqlite3`), business logic, and the UI.
+- **Modern UI**: A polished "Enterprise" theme with a responsive sidebar navigation and custom metric widgets.
+
+## - Technical Stack
+
+- **Language**: Python 3.11+
+- **Database**: SQLite (SQL/DLD/DML)
+- **GUI Framework**: Tkinter (Custom Themed)
+- **Design Patterns**: OOP, Singleton-style Database Manager, Component-based UI.
+
+## - Database Schema
+
+The project utilizes a normalized 3NF schema consisting of 6 tables:
+- `team`: Affiliate team management and discount rates.
+- `seller`: Representative profiles and commission tracking.
+- `product`: Inventory management (stock, wholesale vs. retail).
+- `customer`: Client demographics and balance tracking.
+- `order_table`: Transaction headers.
+- `order_details`: Line-item transaction data.
+
+## - Installation & Usage
+
+1. **Clone the repository**:
+   ```bash
+   git clone https://github.com/your-username/sales_analytics_core.git
+   cd sales_analytics_core
+   ```
+
+2. **Run the application**:
+   ```bash
+   python sales_app.py
+   ```
+   *Note: On the first run, the system will automatically initialize the `sales.db` database using the provided `salesdb(1).sql` script.*
+
+## - Documentation
+For a detailed breakdown of the technical requirements, architectural diagrams, and error handling strategies, refer to the [Technical Report](./Αναφορά_Μέρους_Γ.pdf).
